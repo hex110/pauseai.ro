@@ -1,0 +1,44 @@
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;700&family=Roboto+Slab:wght@300;400&display=swap");
+
+/* Base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply bg-white text-black font-roboto font-light;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-saira font-bold;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Animation utilities */
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-in-out;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

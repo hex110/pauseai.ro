@@ -1,0 +1,16 @@
+# Fresh build directory
+_fresh/
+# Node modules (for Tailwind)
+node_modules/
+# Environment variables
+.env
+.env.local
+# Editor directories
+.vscode/
+.idea/
+# OS files
+.DS_Store
+Thumbs.db
+
+docs/
+backup_placeholder/
