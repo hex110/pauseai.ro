@@ -1,0 +1,295 @@
+/* Risks Page Specific Styles */
+
+/* Hero Section */
+.risks-hero {
+    padding: calc(var(--spacing-4xl) + var(--header-height)) var(--spacing-lg) var(--spacing-2xl);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.risks-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: var(--spacing-lg);
+    animation: fadeInUp 1s ease-out;
+}
+
+.risks-hero p {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    max-width: 800px;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+    color: var(--color-gray-600);
+}
+
+/* Content Sections */
+.content-section {
+    padding: var(--spacing-2xl) 0;
+}
+
+.content-section.dark {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Introduction */
+.lead {
+    font-size: var(--fs-xl);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+}
+
+.expert-quote {
+    border-left: 4px solid var(--color-primary);
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+    background-color: var(--color-gray-100);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.expert-quote p {
+    font-size: var(--fs-large);
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+}
+
+.expert-quote cite {
+    font-size: var(--fs-base);
+    color: var(--color-gray-800);
+}
+
+/* Risk Cards */
+.risk-card {
+    background-color: var(--color-gray-800);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.risk-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.risk-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255,148,22,0.1));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.risk-card:hover::before {
+    opacity: 1;
+}
+
+.risk-content {
+    position: relative;
+    z-index: 1;
+}
+
+.risk-card h3 {
+    color: var(--color-primary);
+    font-size: var(--fs-2xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.risk-stat {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background-color: rgba(255,148,22,0.1);
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: var(--fs-4xl);
+    font-family: var(--font-heading);
+    font-weight: var(--fw-bold);
+    color: var(--color-primary);
+}
+
+.stat-description {
+    text-align: center;
+    font-size: var(--fs-small);
+    margin-top: var(--spacing-xs);
+}
+
+.warning-box {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: rgba(255,148,22,0.1);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-family: var(--font-heading);
+    font-weight: var(--fw-bold);
+}
+
+.impact-list {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--spacing-md);
+}
+
+.impact-list li {
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+}
+
+.impact-list li::before {
+    content: '•';
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    font-weight: var(--fw-bold);
+}
+
+/* Urgency Section */
+.urgency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.urgency-card {
+    background-color: var(--color-gray-100);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all var(--transition-normal);
+}
+
+.urgency-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.urgency-card h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Expert Quotes Carousel */
+.quotes-carousel {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+
+.quote-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+}
+
+.quote-slide blockquote {
+    text-align: center;
+    max-width: 800px;
+}
+
+.quote-slide p {
+    font-size: var(--fs-2xl);
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+}
+
+.quote-slide cite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.quote-slide cite strong {
+    color: var(--color-primary);
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.carousel-controls button {
+    background: none;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.carousel-controls button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+}
+
+/* Call to Action */
+#call-to-action {
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
+}
+
+#call-to-action .cta-button {
+    margin-top: var(--spacing-xl);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .risks-hero {
+        height: 50vh;
+    }
+
+    .expert-quote {
+        padding: var(--spacing-md);
+    }
+
+    .risk-card {
+        padding: var(--spacing-lg);
+    }
+
+    .quote-slide p {
+        font-size: var(--fs-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .risk-stat {
+        width: 100%;
+    }
+
+    .urgency-grid {
+        grid-template-columns: 1fr;
+    }
+} 
